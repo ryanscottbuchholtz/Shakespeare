@@ -1,5 +1,14 @@
 require 'spec_helper'
 
 describe User do
-  pending "add some examples to (or delete) #{__FILE__}"
+  describe "User Validations" do
+  
+  let (:blank) { ['', nil] }
+  
+    it { should_not have_valid(:first_name).when(*blank) }
+    it { should_not have_valid(:last_name).when(*blank) }
+    it { should_not have_valid(:email).when(*blank) }
+
+  end
+  
 end
